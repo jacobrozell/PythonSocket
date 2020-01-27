@@ -1,10 +1,17 @@
 import socket
+import sys
 
 def client_program():
     client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-    host = socket.gethostname()
-    port = 8069
+    if sys.argv[1] is not None:
+        arg1 = sys.argv[1]
+        print("ARG1: " + str(arg1))
+        host = str(arg1)
+        port = 8080
+    else:
+        host = host.gethostname()
+        port = 8080
 
     client_socket.connect((host, port))
 
