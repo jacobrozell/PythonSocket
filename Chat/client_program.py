@@ -1,12 +1,14 @@
 import socket
 
 def client_program():
-    host = '127.0.0.1'
-    port = 5000
+    client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-    client_socket = socket.socket()
+    host = socket.gethostname()
+    port = 444
+
     client_socket.connect((host, port))
 
+    print("Connected to server at " + str(host) + str(port))
     message = raw_input(" >> ")
 
     while message.lower().strip() != 'bye':
