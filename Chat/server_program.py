@@ -9,11 +9,13 @@ def server_program():
     port = 8069
 
     server_socket.bind((host, port))
+
+    print(port)
     
     # configure how many client the server can listen
     server_socket.listen(2)
 
-    print("Waiting for connections...")
+    print("Waiting for connections:  " + str(host) + str(port))
 
     conn, address = server_socket.accept()
     print("Connection from: ", address)
