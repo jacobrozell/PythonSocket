@@ -6,9 +6,9 @@ def server_program():
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
     host = socket.gethostname()
-    port = 444
+    port = 8069
 
-    server_socket.bind((host,port))
+    server_socket.bind((host, port))
     
     # configure how many client the server can listen
     server_socket.listen(2)
